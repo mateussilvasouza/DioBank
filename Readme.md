@@ -1,38 +1,45 @@
-# Desenvolvendo o Dio Bank
-desenvolvido por [Nathally Souza](https://github.com/nathyts)
+# DioBank
 
-#### Projeto desenvolvido com conceitos básicos de typescript
+> Fork base para o **Desafio DioBank** do Bootcamp **Formação TypeScript Fullstack Developer** da [DIO](https://www.dio.me/).
 
-### Tecnologias
-- Typescript
+Projeto original desenvolvido por [Nathally Souza](https://github.com/nathyts).
 
-### Como rodar o projeto
+## Sobre o projeto
 
-1 - Clone o repositório
+Simulação de um sistema bancário simples utilizando os conceitos de **Programação Orientada a Objetos** com TypeScript: classes abstratas, herança, encapsulamento e sobrescrita de métodos.
 
-2 - Instale as dependeências
-    
-    npm install
+### Tipos de conta
 
-3 - Execute o projeto
+| Classe | Descrição |
+|---|---|
+| `DioAccount` | Classe abstrata base com depósito, saque e consulta de saldo |
+| `PeopleAccount` | Conta de pessoa física (CPF + dados da conta) |
+| `CompanyAccount` | Conta empresarial com método de empréstimo (`getLoan`) |
+| `BrokenAccount` | Conta bônus — todo depósito acrescenta R$ 10 ao valor informado |
 
-    npm run dev
+## Tecnologias
 
-#### Desafios
-[ ] Implementar os métodos de depósito (deposit) e saque (withdraw) na classe DioAccount
-  - Os valores dos saldos devem ser alterados, de acordo com o valor informado para depósito
-  - Apenas contas com o status true e saldo (balance) maior que o valor solicitado podem fazer saques
+- [TypeScript](https://www.typescriptlang.org/)
+- [ts-node-dev](https://github.com/wclr/ts-node-dev)
 
-[ ] Implementar o método de empréstimo (getLoan) na classe CompanyAccount
-  - Os valores do saldos deve ser acrescidos, de acordo com o valor informado para empréstimo
-  - Apenas contas com o status true podem fazer empréstimo
+## Como rodar o projeto
 
-[ ] Criar um novo tipo de conta a partir da DioAccount
-  - Esta conta não deve receber novos atributos
-  - Esta conta terá um método de depósito, que acresce 10 a mais ao valor informado para depósito. (Ex: Um depósito de 100, será de 110 no final)
+```bash
+# 1. Clone o repositório
+git clone <url-do-repositorio>
 
-[ ] Todos os atributos de qualquer conta devem ser privados
+# 2. Instale as dependências
+npm install
 
-[ ] Os atributos name e accountNumber não podem ser alterados internamente ou externamente
+# 3. Execute o projeto
+npm run dev
+```
 
-[ ] Criar instancias para cada um dos tipos de conta no app.ts e executar os métodos possíveis.
+## Desafios
+
+- [x] Implementar `deposit` e `withdraw` na classe `DioAccount`
+- [x] Implementar `getLoan` na classe `CompanyAccount`
+- [x] Criar `BrokenAccount` com depósito bônus (+10 ao valor informado)
+- [x] Todos os atributos de qualquer conta devem ser privados
+- [x] `name` e `accountNumber` não podem ser alterados interna ou externamente
+- [x] Criar instâncias para cada tipo de conta no `app.ts` e executar os métodos disponíveis
